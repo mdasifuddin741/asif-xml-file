@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2501120287258611"
+     crossorigin="anonymous"></script>
+<title>ASIF XML</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#eee;font-family:Arial,"Noto Sans Bengali",sans-serif;color:#111}
+.wrap{max-width:720px;margin:0 auto;padding:22px 12px}
+.card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 3px 15px rgba(0,0,0,.08)}
+h1{text-align:center;margin:4px 0 18px}
+video{width:100%;display:block;border-radius:8px;background:#000}
+.notice{margin:18px 0;padding:18px;border:3px solid #2aa94f;border-radius:18px;background:#edfbea;text-align:center;font-size:20px;font-weight:700;line-height:1.5}
+button{width:100%;border:0;border-radius:35px;padding:17px 15px;margin:8px 0;font-size:18px;font-weight:700}
+.step{background:#111;color:#fff}
+.step:disabled{opacity:.55}
+.done{background:#198754!important}
+.download{background:#d62828;color:#fff;margin-top:16px}
+.ready{background:#198754}
+.download:disabled{opacity:.8}
+.small{text-align:center;color:#666;font-size:14px}
+</style>
+</head>
+<body>
+<main class="wrap">
+<section class="card">
+<h1>ASIF XML</h1>
+<video controls playsinline>
+<source src="video.mp4" type="video/mp4">
+আপনার ব্রাউজার ভিডিও চালাতে পারছে না।
+</video>
+
+<div class="notice">🔐 XML Download করতে নিচের দুইটি Step Complete করুন।</div>
+
+<button class="step" id="step1" onclick="unlockStep(1)">🔒 Step 1 — Watch Ad to Unlock</button>
+<button class="step" id="step2" onclick="unlockStep(2)" disabled>🔒 Step 2 — Watch Ad to Unlock</button>
+<button class="download" id="download" onclick="downloadXML()" disabled>🔴 DOWNLOAD XML</button>
+
+<p class="small">Step 1 ও Step 2 সম্পূর্ণ হলে Download চালু হবে।</p>
+</section>
+</main>
+
+<script>
+let completed1=false, completed2=false;
+
+function unlockStep(step){
+  // Temporary demo only. Replace later with an approved rewarded-ad completion event.
+  const ok=confirm("Demo mode: বিজ্ঞাপন দেখার ধাপটি এখানে পরীক্ষা করা হচ্ছে। Continue?");
+  if(!ok)return;
+
+  if(step===1){
+    completed1=true;
+    const b=document.getElementById("step1");
+    b.textContent="✅ Step 1 Complete";
+    b.classList.add("done");
+    document.getElementById("step2").disabled=false;
+  }
+
+  if(step===2 && completed1){
+    completed2=true;
+    const b=document.getElementById("step2");
+    b.textContent="✅ Step 2 Complete";
+    b.classList.add("done");
+    const d=document.getElementById("download");
+    d.disabled=false;
+    d.textContent="🟢 DOWNLOAD XML";
+    d.classList.add("ready");
+  }
+}
+
+function downloadXML(){
+  if(!completed1 || !completed2)return;
+  window.location.href="https://drive.google.com/uc?export=download&id=1uuGtG1wFcSyUXGR0AOBTwOiaA-7Oe3vw";
+}
+</script>
+</body>
+</html>
